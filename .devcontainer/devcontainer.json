@@ -1,7 +1,13 @@
 {
-    "name": "codespace",
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",  // Any generic, debian-based image.
-    "features": {
-        "ghcr.io/devcontainers/features/java:1": {}
-    }
+  "name": "Java Development",
+  "image": "mcr.microsoft.com/vscode/devcontainers/java:11",
+  "settings": {
+    "java.home": "/usr/local/sdkman/candidates/java/current"
+  },
+  "extensions": [
+    "vscjava.vscode-java-pack"
+  ],
+  "postCreateCommand": "mvn clean install",
+  "forwardPorts": [8080],
+  "remoteUser": "vscode"
 }
